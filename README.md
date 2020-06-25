@@ -1,13 +1,30 @@
 # FFXINavMeshes
 
-
 These NavMeshes were built using FFXINAV.dll, a wrapper i wrote for RecastDetour
 
-Thanks to Vulture for his Map Collision extraction too, Devi Ltti for fixes and FFXI Zone dat locations.
+# Thanks to Vulture for his Map Collision extraction tool, Devi Ltti for fixes and FFXI Zone dat locations.
 
+# FFXINAV.dll function
+- unload
+- Initialize
+- GetLogMessage
+
+- findPath(position_t start, position_t end , false); //Set false if using meshes made with the obj files exported by pathfinder.exe or using dsp.nav files. set true if using meshes made with noesis obj files.
+
+- isNavMeshEnabled
+- Pathpoints
+- Get_WayPoints
+- ReleaseItems
+- NavMeshSettings
+- DumpNavMesh
+when dumping NavMeshes good settings to use are ( cell size 20, height 10, Agent height 1.8, agent radius 0.4, max climb 0.7, and max slope of 47, tile size 48 - but you can lower this for small zones) -- good site to read for NavMesh settings http://digestingduck.blogspot.com/2009/08/recast-settings-uncovered.html
+
+
+- DLL errors will be saved to FFXINAV_LOG txt file. if you have any problems please check there.
+
+FFXINAV.DLL will also work with DSP NavMeshes 
 
 you can find recast detour here https://github.com/recastnavigation/recastnavigation
-
 
  Q: How do I edit the navmesh that was built with FFXINAV.dll in RecastDemo.exe?
  
